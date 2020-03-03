@@ -17,6 +17,37 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+/*------- SOLUTION 1 ------ */
+
+/* STEPS:
+  1. From 0 to n (iterate through rows)
+    2. Create an empty string, 'stair'
+    3. From 0 to n (iterate through columns)
+      4. IF the current column is equal to or less than the current row
+        5. Add a "#" to 'stair'
+      6. ELSE
+        7. Add a space to 'stair'
+  8. Console log 'stair'
+*/
+
+function steps(n) {
+  for (let row = 0; row < n; row++) {
+    let stair = '';
+
+    for (let column = 0; column < n; column++) {
+      if (column <= row) {
+        stair += '#';
+      } else {
+        stair += ' ';
+      }
+    }
+    console.log(stair)
+  }
+}
 
 module.exports = steps;
+
+/* RUNTIME COMPLEXITY
+  This would be n^2 or 'quadratic runtime'
+  As'n' increased by one, we had to do way, way more stuff, or (n*n) things total
+*/
